@@ -7,15 +7,27 @@ body {
 ---------- Reusable items ---------------
 -------------------------------------- */
 
-h1, h2, h3, h4, h5, p, a {
-  font-family: sans-serif;
+h1, h2, h3, h4, h5 {
+  font-family: 'Rubik', sans-serif;
+}
+
+p, a {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.0225em;
+}
+
+p {
+  color: #444;
 }
 
 .btn {
-  padding: 5px 40px;
+  padding: 15px 40px;
   background: coral;
   text-decoration: none;
   color: white;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .btn:hover {
@@ -36,26 +48,53 @@ h1, h2, h3, h4, h5, p, a {
 
 .flex {
   display: flex;
-  flex-wrap;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
+  align-content: center;
 }
 
+.container {
+  padding: 15px 15px;
+}
 
+.orange {
+  background: #f16521;
+}
+
+.yellow {
+  background: yellow;
+}
+
+input {
+  padding: 10px 15px;
+}
+
+button {
+  padding: 10px 25px;
+  border: 2px solid #f1c40f;
+  background: #f1c40f;
+  color: white;
+}
 
 /* --------------------------------------
 ---------- Header or Banner ---------------
 -------------------------------------- */
 
+.banner {
+  background: #eee;
+  border: 1px solid #ccc;
+}
 
 .banner .header {
-  background: #bbb;
   text-align: center;
   max-width: 600px;
   padding: 0px 15px;
 }
 
 .header h1 {
-  font-size: 3em;
+  font-weight: 900;
+  margin: 0px;
 }
 
 .header p {
@@ -69,14 +108,47 @@ h1, h2, h3, h4, h5, p, a {
 
 .slogan-wrap {
   max-width: 1200px;
+  padding: 40px 0px;
 }
 
 .slogan-message {
   padding: 0px 15px;
 }
 
+.slogan-message h1 {
+  font-size: 2em;
+  font-weight: 800;
+  margin: 0;
+}
+
 .slogan-info {
   padding: 0px 15px;
+}
+
+/* --------------------------------------
+---------- Call to Action Block ---------------
+-------------------------------------- */
+
+.cta {
+    width: 100%;
+    color: white;
+    padding: 15px 0px;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.donate-input {
+  margin: 0px 40px;
+}
+
+.donate-input input, button {
+  font-size: 1em;
 }
 
 
@@ -89,46 +161,73 @@ h1, h2, h3, h4, h5, p, a {
 /* Bigger than 550 */
 @media (min-width: 360px) {
   .banner {
-    background: #ccc;
     height: 100vh;
     width: 100%;
+  }
+
+  .banner .header h1 {
+    font-size: 2em;
+  }
+
+  .slogan-wrap {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .cta-header {
+    text-align: center;
+  }
+
+  .donate-input {
+    display: flex;
+    justify-content: center;
   }
 }
 
 /* Bigger than 750 */
 @media (min-width: 750px) {
-  .banner {
-    background: #ccc;
-    height: 500px;
-    width: 100%;
-  }
-  .slogan-wrap {
+  .wrap {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin: auto;
-    padding: 40px 0px;
-
   }
+  /* Banner */
+
+  .banner {
+    height: 500px;
+    width: 100%;
+  }
+
+  .banner .header h1 {
+    font-size: 3em;
+  }
+
+  /* Below banner slogan */
+
   .slogan-message {
     padding: 0px 15px;
-    flex-basis: 20%;
+    flex-basis: 30%;
   }
 
   .slogan-info {
     padding: 0px 15px;
-    flex-basis: 70%;
+    flex-basis: 60%;
   }
+
+  /* Call to Action */
+  .cta-header {
+    text-align: left;
+  }
+
 }
 
 /* Bigger than 1000 */
 @media (min-width: 1000px) {
   .banner {
-    background: #ccc;
     height: 500px;
-    width: 100%;
   }
 
   .slogan-message {
